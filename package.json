@@ -1,0 +1,53 @@
+{
+  "name": "multi-isbn",
+  "version": "0.1.0",
+  "description": "Find books by ISBN from isbndb, google, open library and worldcat",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "doctoc": "doctoc README.md && if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != '' ]]; then git add README.md && git commit --no-verify -m 'table of contents update'; fi",
+    "test": "mocha -R list test/*.js",
+    "cli-test": "node bin/cli.js --isbn 9780310586418"
+  },
+  "bin": {
+    "multi-isbn": "./bin/cli.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//multi-isbn"
+  },
+  "keywords": [
+    "multi",
+    "isbn",
+    "isbndb",
+    "google books",
+    "open library",
+    "worldcat"
+  ],
+  "author": "yieme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com//multi-isbn/issues"
+  },
+  "dependencies": {
+    "convar": "^1.1.6",
+    "isbndbjs": "^1.0.2",
+    "node-isbn": "^1.2.0",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "chai": "~1.10.0"
+  },
+  "globalDependencies": {
+    "jshint": "^2.7.0",
+    "mocha": "~2.1.0"
+  },
+  "generatedBy": {
+    "name": "generator-pkg",
+    "version": "0.7.4",
+    "url": "https://github.com/yieme/generator-pkg"
+  }
+}
