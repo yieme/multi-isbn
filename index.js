@@ -83,7 +83,7 @@ function isbnDbPackage(data) {
   return result
 }
 
-function googleBookPackage(data) {
+function googleBookPackage(id, data) {
   if (!data) {
     return { error: "Not Found" }
   }
@@ -92,15 +92,17 @@ function googleBookPackage(data) {
     var rowData  = data[r].volumeInfo
     var row      = remapData(rowData, GoogleBookMap)
     var idents   = rowData.industryIdentifiers
-    for (var i=0, ilen=idents; i<ilen; i++) {
-      var ident   = idents[a]
+    for (var i=0, ilen=idents.length; i<ilen; i++) {
+      var ident   = idents[i]
       if (ident.type == 'ISBN_10') {
         row.isbn10 = ident.identifier
       } else if (ident.type == 'ISBN_13') {
         row.isbn13 = ident.identifier
       }
     }
-    result.data.push(row)
+    if ((row.isbn10 && row.isbn10 == id) || (row.isbn13 && row.isbn13 == id)) {
+      result.data.push(row) // only books with matching ISBN
+    }
   }
   result.via = ['google', pkg.name + '@' + pkg.version]
   return result
@@ -128,7 +130,7 @@ function find(isbn, callback) {
       if (error) {
         callback(error)
       } else {
-        callback(null, googleBookPackage(JSON.parse(body).items))
+        callback(null, googleBookPackage(isbn, JSON.parse(body).items))
       }
     })
   }
