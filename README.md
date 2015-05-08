@@ -15,7 +15,7 @@ npm i multi-isbn --save
 ```js
 var multiIsbn = require('multi-isbn')
 multiIsbn.init()
-isbnSearch.find(isbn, function(err, data) {
+multiIsbn.find(isbn, function(err, data) {
   if (err) throw err
   console.log(JSON.stringify(data, null, 2))
 })
@@ -30,7 +30,7 @@ var options    = {
   google_book_key: convar('google_book_key')
 }
 multiIsbn.init(options)
-isbnSearch.find(isbn, function(err, data) {
+multiIsbn.find(isbn, function(err, data) {
   if (err) throw err
   console.log(JSON.stringify(data, null, 2))
 })
