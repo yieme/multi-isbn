@@ -11,7 +11,9 @@ var expectedData = {
       "authors": [
         "Ben Carson",
         "Candy Carson"
-      ]
+      ],
+      "isbn10": "1595231129",
+      "isbn13": "9781595231123"
     }
   ],
   "via": ["google", pkg.name + '@' + pkg.version]
