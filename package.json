@@ -1,6 +1,6 @@
 {
   "name": "multi-isbn",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Find books by ISBN from isbndb, google, open library and worldcat",
   "main": "index.js",
   "scripts": {
