@@ -14,8 +14,7 @@ var expectedData = {
       ]
     }
   ],
-  "src": "google",
-  "via": pkg.name + '@' + pkg.version
+  "via": ["google", pkg.name + '@' + pkg.version]
 }
 var expectedJson = JSON.stringify(expectedData)
 

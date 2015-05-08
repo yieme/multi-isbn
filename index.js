@@ -5,7 +5,7 @@
  */
  'use strict';
 
-var ISBNDB_URT = 'https://isbndb.com//api/v2/json/$KEY/book/$ISBN'
+var ISBNDB_URT = 'https://isbndb.com/api/v2/json/$KEY/book/$ISBN'
 var GOOGLE_BOOK_URT = 'https://www.googleapis.com/books/v1/volumes?q=isbn:$ISBN'
 var request = require('request')
 var ISBNDB_URL
@@ -79,8 +79,7 @@ function isbnDbPackage(data) {
     }
     result.data.push(row)
   }
-  result.src = 'isbndb'
-  result.via = pkg.name + '@' + pkg.version
+  result.via = ['isbndb', pkg.name + '@' + pkg.version]
   return result
 }
 
@@ -103,8 +102,7 @@ function googleBookPackage(data) {
     }
     result.data.push(row)
   }
-  result.src = 'google'
-  result.via = pkg.name + '@' + pkg.version
+  result.via = ['google', pkg.name + '@' + pkg.version]
   return result
 }
 
