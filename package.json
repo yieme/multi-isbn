@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//multi-isbn"
+    "url": "https://github.com/yieme/multi-isbn"
   },
   "keywords": [
     "multi",
@@ -30,7 +30,7 @@
   "author": "yieme",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com//multi-isbn/issues"
+    "url": "https://github.com/yieme/multi-isbn/issues"
   },
   "dependencies": {
     "convar": "^1.1.6",
